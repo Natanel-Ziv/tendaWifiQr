@@ -1,6 +1,6 @@
 {
   "name": "tendaWifiQr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reads WIFI info from Tenda router and generates QR code",
   "main": "dist/index.js",
   "repository": {
