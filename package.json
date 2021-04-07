@@ -1,0 +1,65 @@
+{
+  "name": "tendaWifiQr",
+  "version": "1.0.0",
+  "description": "Reads WIFI info from Tenda router and generates QR code",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Natanel-Ziv/tendaWifiQr.git"
+  },
+  "author": "Natanel Ziv <natanel.ziv@motorolasolutions.com> (https://github.com/natanel-ziv)",
+  "bugs": {
+    "url": "https://github.com/Natanel-Ziv/tendaWifiQr/issues"
+  },
+  "homepage": "https://github.com/Natanel-Ziv/tendaWifiQr#readme",
+  "license": "MIT",
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
+  "scripts": {
+    "lint": "eslint src --fix --ext .ts",
+    "test": "npm run lint && npm run type-check",
+    "start": "babel-node src/server.ts --extensions \".ts\"",
+    "dev": "nodemon",
+    "type-check": "tsc --noEmit",
+    "build": "rimraf dist && npm run build:js",
+    "build:js": "babel src --out-dir dist --extensions \".ts\"",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "env-var": "^7.0.0",
+    "express": "^4.17.1",
+    "express-json-error-handler": "^4.0.0",
+    "pino": "^6.11.2",
+    "wifi-qr-code-generator": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.13.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-typescript": "^7.13.0",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.37",
+    "@types/pino": "^6.3.6",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint": "^7.23.0",
+    "eslint-config-noamokman": "^10.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-unicorn": "^29.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}
