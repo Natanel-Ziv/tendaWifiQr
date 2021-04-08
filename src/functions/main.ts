@@ -27,7 +27,7 @@ interface wifiBasicCfg {
   wifiTotalEn: boolean;
 }
 
-export const getQRCode = async () => {
+export const getQRCodeSVG = async () => {
   const wifiDataResp = await axios.get(`${routerURL}`);
   const wifiData: tendaAnswer = wifiDataResp.data;
   const wifiCfg: wifiBasicCfg = wifiData.wifiBasicCfg;
@@ -38,7 +38,7 @@ export const getQRCode = async () => {
     password: wifiCfg.wifiPwd,
     encryption: 'WPA',
     hiddenSSID: false,
-    outputFormat: {type: 'image/png'}
+    outputFormat: {type: 'svg'}
   }).then((data: string) => {
     return data;
   })
